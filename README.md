@@ -1,4 +1,5 @@
-# Health-on-hands
+# Health on Hands – Hospital Doctor Appointment Booking System
+
 
 ##  Project Overview
 
