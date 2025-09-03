@@ -1,0 +1,65 @@
+{% if session['role']== "patient"%}
+    {% include 'phead.html' %}
+{% endif %}
+{% if session['role']== "doctor"%}
+    {% include 'dhead.html' %}
+{% endif %}
+{% if session['role']== "admin"%}
+    {% include 'ahead.html' %}
+{% endif %}
+<div class="w-90 m-auto mt-10">
+    <div class="card p-10">
+        <form action="doctor_timings_action">
+            <div class="row space-between">
+                <div class="w-23">
+                    <label>Weekday</label>
+                    <select id="day" name="day" class="w-100 p-2px"  required>
+                        <option value="Sunday">Sunday</option>
+                        <option value="Monday">Monday</option>
+                        <option value="Tuesday">Tuesday</option>
+                        <option value="Wednesday">Wednesday</option>
+                        <option value="Thursday">Thursday</option>
+                        <option value="Friday">Friday</option>
+                        <option value="Saturday">Saturday</option>
+                    </select>
+                </div>
+                <div class="w-23">
+                    <div>
+                        <label>From Time</label>
+                        <input type="time" name="start_date" required class="w-100 p-2px">
+                    </div>
+                </div>
+                <div class="w-23">
+                    <div>
+                        <label>TO Time</label>
+                        <input type="time" name="end_date" required class="w-100 p-2px">
+                    </div>
+                </div>
+                <div class="w-23">
+                    <input type="submit" value="Add Timings" class="button">
+                </div>
+            </div>
+        </form>
+    </div>
+    <div class="w-100 mt-20">
+        <div class="text-center" style="font-size:130%">Doctor Timings</div>
+        <table border="1" style="border-collapse: collapse;width:100%" class="w-100 mt-10">
+            <thead>
+                <tr>
+                    <th>Day</th>
+                    <th>From Time</th>
+                    <th>To Time</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for doctor_timing in doctor_timings %}
+                    <tr>
+                        <td>{{doctor_timing['day']}}</td>
+                        <td>{{doctor_timing['start_date'].strftime("%I:%M %p")}}</td>
+                        <td>{{doctor_timing['end_date'].strftime("%I:%M %p")}}</td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
