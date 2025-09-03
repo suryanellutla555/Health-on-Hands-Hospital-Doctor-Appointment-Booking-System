@@ -1,0 +1,42 @@
+{% if session['role']== "patient"%}
+    {% include 'phead.html' %}
+{% endif %}
+{% if session['role']== "doctor"%}
+    {% include 'dhead.html' %}
+{% endif %}
+{% if session['role']== "admin"%}
+    {% include 'ahead.html' %}
+{% endif %}
+<div class="row">
+    <div class="card w-30 ml-500 mt-100 bg-green text-white">
+        <div class="title">View Payment Details</div>
+        <div class="row">
+            <div class="w-45">
+                <div class="item-text-small">Card Type</div>
+                <div class="item-text-large">{{payment['card_type']}}</div>
+            </div>
+            <div class="w-45">
+                <div class="item-text-small">CVV</div>
+                <div class="item-text-large">{{payment['cvv']}}</div>
+            </div>
+        </div>
+         <div class="row">
+            <div class="w-45">
+               <div class="item-text-small">Expiry Date</div>
+                <div class="item-text-large">{{payment['expiry_date']}}</div>
+            </div>
+            <div class="w-45">
+                <div class="item-text-small">Paid Amount</div>
+                <div class="item-text-large">$ {{payment['price']}}</div>
+            </div>
+        </div>
+        <div class="pl-5">
+            <div class="item-text-small pl-5">Card number</div>
+            <div class="item-text-large">{{payment['card_number']}}</div>
+        </div>
+        <div class="pl-5">
+            <div class="item-text-small">Name On Card</div>
+            <div class="item-text-large">{{payment['name_on_card']}}</div>
+        </div>
+    </div>
+</div>

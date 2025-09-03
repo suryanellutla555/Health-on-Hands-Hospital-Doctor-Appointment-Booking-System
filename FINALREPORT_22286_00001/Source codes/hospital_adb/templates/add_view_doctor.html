@@ -1,0 +1,271 @@
+{% include 'ahead.html' %}
+<form action="add_view_doctor">
+    <input type="hidden" name="vaccine_id" value="{{vaccine_id}}">
+    <div class="row">
+        <div class="w-30"></div>
+        <div class="w-30 input-data text-center">
+            <div class="text">
+                <label for="keyword"></label>
+                <input type="text" id="keyword" class="keyword-searchbar" name="keyword" value="{{keyword}}" placeholder="Choose Name or Specialization" >
+            </div>
+            <div class="text">
+                <input type="submit" class="keyword-link"  value="search">
+            </div>
+        </div>
+        <div class="w-30"></div>
+    </div>
+</form>
+
+<div class="bg-img-3">
+     <div class="row">
+         {% if session['role'] == 'admin' %}
+            <div class="c1 col-30 p-20px">
+                <div class="card w-100  ml-30">
+                   <form action="add_view_doctor_action" method="post" enctype="multipart/form-data">
+                       <div class="title">Add Doctor Details</div>
+                       <div class="row space-between">
+                           <div class="w-45">
+                               <div class="name mt-10 ">
+                                    <div class="row mt-10">
+                                         <div for="first_name" class="label-1">First Name</div>
+                                    </div>
+                                    <input type="text" id="first_name"  name="first_name" class="placeholder-box" placeholder="Enter First Name" required>
+                                </div>
+                           </div>
+                           <div class="w-45">
+                               <div class="name mt-10 ">
+                                    <div class="row mt-10">
+                                         <div for="last_name" class="label-1">Last Name</div>
+                                    </div>
+                                    <input type="text" id="last_name"  name="last_name" class="placeholder-box" placeholder="Enter Last Name" required>
+                               </div>
+                           </div>
+                       </div>
+                       <div class="row space-between">
+                           <div class="w-45">
+                               <div class="email mt-10">
+                                    <div class="row mt-10">
+                                        <div for="email" class="label-1">Email</div>
+                                    </div>
+                                    <input type="email" id="email"  name="email" class="placeholder-box" placeholder="Enter Email" required>
+                               </div>
+                           </div>
+                           <div class="w-45">
+                               <div class="phone mt-10">
+                                    <div class="row mt-10">
+                                        <div for="phone" class="">Phone</div>
+                                    </div>
+                                    <input type="number" id="phone"  name="phone" class="placeholder-box" placeholder="Enter Phone Number" required>
+                                </div>
+                           </div>
+                       </div>
+                       <div class="row space-between">
+                           <div class="w-45">
+                               <div class="password mt-10">
+                                    <div class="row mt-10">
+                                        <div for="password" class="">Password</div>
+                                    </div>
+                                    <input type="password" id="password"  name="password" class="placeholder-box" placeholder="Enter Password" required>
+                               </div>
+                           </div>
+                           <div class="w-45">
+                               <div class="password mt-10">
+                                    <div class="row mt-5">
+                                        <div for="password" class="label-1">Confirm Password</div>
+                                    </div>
+                                    <input type="password" id="password2"  name="password2" class="placeholder-box" placeholder="Enter Confirm Password" required>
+                                </div>
+                           </div>
+                       </div>
+                       <div class="row space-between">
+                           <div class="w-45">
+                               <div class="ssn mt-10">
+                                    <div class="row mt-10">
+                                        <div for="specialization" class="">SSN</div>
+                                    </div>
+                                    <input type="text" id="ssn"  name="ssn" class="placeholder-box" placeholder="Enter ssn" required>
+                               </div>
+                           </div>
+                           <div class="w-45">
+                               <div class="dob mt-10">
+                                    <div class="row mt-10">
+                                        <div for="dob" class="">DOB</div>
+                                    </div>
+                                    <input type="date" id="dob" max="2004-05-05"  name="dob" class="placeholder-box" placeholder="Enter DOB" required>
+                               </div>
+                           </div>
+                       </div>
+                        <div class="row space-between">
+                           <div class="w-45">
+                               <div class="city mt-10">
+                                    <div class="row mt-10">
+                                        <div for="city" class="">City</div>
+                                    </div>
+                                    <input type="text" id="city"  name="city" class="placeholder-box" placeholder="Enter City" required>
+                               </div>
+                           </div>
+                           <div class="w-45">
+                               <div class="state mt-10">
+                                    <div class="row mt-10">
+                                        <div for="state" class="">State</div>
+                                    </div>
+                                    <input type="text" id="state"  name="state" class="placeholder-box" placeholder="Enter State" required>
+                               </div>
+                           </div>
+                       </div>
+                        <div class="row space-between">
+                           <div class="w-45">
+                               <div class="zipcode mt-10">
+                                    <div class="row mt-10">
+                                        <div for="zipcode" class="">Zipcode</div>
+                                    </div>
+                                    <input type="number" id="zipcode"  name="zipcode" class="placeholder-box" placeholder="Enter Zipcode" required>
+                               </div>
+                           </div>
+                           <div class="w-45">
+                               <div class="mt-10">
+                                 <div class="mt-30">
+                                    <label for="gender">Gender</label>
+                                    <input type="radio" id="gender" name="gender" value="male" required> <label for="gender">Male</label>
+                                    <input type="radio" id="gender2" name="gender" value="female" required> <label for="gender2">Female</label>
+                                 </div>
+                            </div>
+                           </div>
+                       </div>
+                        <div class="row space-between">
+                           <div class="w-45">
+                               <div class="experience mt-10">
+                                    <div class="row mt-10">
+                                        <div for="experience" class="">Experience</div>
+                                    </div>
+                                    <input type="text" id="experience"  name="experience" class="placeholder-box" placeholder="Enter Experience" required>
+                                </div>
+                           </div>
+                           <div class="w-45">
+                               <div class="consulting_fee mt-10">
+                                    <div class="row mt-10">
+                                        <div for="consulting_fee" class="">Consulting Fee</div>
+                                    </div>
+                                    <input type="number" id="consulting_fee"  name="consulting_fee" class="placeholder-box" placeholder="Consulting Fee" required>
+                                </div>
+                           </div>
+                       </div>
+                        <div class="row space-between">
+                           <div class="w-45">
+                               <div class="specialization mt-10">
+                                    <div class="row mt-10">
+                                        <div for="specialization" class="">Specialization</div>
+                                    </div>
+                                    <input type="text" id="specialization"  name="specialization" class="placeholder-box" placeholder="Enter Specialization" required>
+                                </div>
+                           </div>
+                           <div class="w-45">
+                               <div class="designation mt-10 ">
+                                    <div class="row bt-5">
+                                        <div for="designation" class="">Designation</div>
+                                    </div>
+                                    <input type="text" id="designation"  name="designation" class="placeholder-box" placeholder="Enter Designation" required>
+                                </div>
+                           </div>
+                       </div>
+                        <div class="address mt-10 ">
+                            <div class="row bt-5">
+                                <div for="address" class="">Address</div>
+                            </div>
+                            <input type="text" id="address"  name="address" class="placeholder-box" placeholder="Enter Address" required>
+                        </div>
+
+                        <div class="about_doctor mt-10">
+                            <div class="row mt-10">
+                                <div for="about_doctor" class="">About Doctor</div>
+                            </div>
+                            <input type="text" id="about_doctor"  name="about_doctor" class="placeholder-box" placeholder="About Doctor" required>
+                        </div>
+                        <div class="picture mt-10">
+                            <div class="row mt-10">
+                                <label for="picture">Doctor Image</label>
+                                 <input type="file" id="picture" name="picture" class="placeholder-box" placeholder="Add Doctor Image" required>
+                            </div>
+                        </div>
+                        <div><input type="submit" class="button" value="ADD" required></div>
+                        <div class="t-msg">{{message}}</div>
+                   </form>
+                </div>
+            </div>
+         {% endif %}
+        <div class="col-70">
+            <div class="">
+            <div class="row">
+                {% for doctor in doctors %}
+                <div class="card mt-70 w-45 ml-50">
+                        <div class=""><img src="../static/doctors/{{doctor['picture']}}" class="h-100"></div>
+                        <div class="row">
+                            <div class="col-1">
+                                <div class=" mt-10">
+                                    <div class="card-label">Name</div>
+                                    <div class="card-text">{{doctor['first_name']}} {{doctor['last_name']}}</div>
+                                </div>
+                                <div class=" mt-10">
+                                    <div class="card-label">Email</div>
+                                    <div class="card-text">{{doctor['email']}}</div>
+                                </div>
+                                <div class=" mt-10">
+                                    <div class="card-label">Phone</div>
+                                    <div class="card-text">{{doctor['phone']}}</div>
+                                </div>
+                                <div class=" mt-10">
+                                    <div class="card-label">SSN</div>
+                                    <div class="card-text">{{doctor['ssn']}}</div>
+                                </div>
+                                <div class=" mt-10">
+                                    <div class="card-label">Date of Birth</div>
+                                    <div class="card-text">{{doctor['dob']}}</div>
+                                </div>
+                                <div class=" mt-10">
+                                    <div class="card-label">Gender</div>
+                                    <div class="card-text">{{doctor['gender']}}</div>
+                                </div>
+
+                            </div>
+                            <div class="col-1">
+                                <div class=" mt-10">
+                                    <div class="card-label">Address</div>
+                                    <div class="card-text">
+                                        <div>{{doctor['address']}}</div>
+                                        <div>{{doctor['city']}}, {{doctor['state']}} - {{doctor['zipcode']}}</div>
+                                    </div>
+                                </div>
+                                <div class=" mt-10">
+                                    <div class="card-label">Consulting Free</div>
+                                    <div class="card-text">{{doctor['consulting_fee']}}</div>
+                                </div>
+                                <div class=" mt-10">
+                                    <div class="card-label">Experience</div>
+                                    <div class="card-text">{{doctor['experience']}}</div>
+                                </div>
+                                <div class=" mt-10">
+                                    <div class="card-label">Designation</div>
+                                    <div class="card-text">{{doctor['designation']}}</div>
+                                </div>
+                                <div class=" mt-10">
+                                    <div class="card-label">Specialization</div>
+                                    <div class="card-text">{{doctor['specialization']}}</div>
+                                </div>
+                                <div class="mt-20">
+                                    <a class="button link-1" href="slots?doctor_id={{doctor['_id']}}&appointment_type=doctor&vaccine_id={{vaccine_id}}">Slots</a>
+                                </div>
+
+                            </div>
+                            <div class=" mt-10">
+                                <div class="card-label">About</div>
+                                <div class="card-text">{{doctor['about_doctor']}}</div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        </div>
+     </div>
+</div>
+
