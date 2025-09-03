@@ -1,0 +1,55 @@
+table, th, td{
+    border: 1px solid   ;
+}
+.table {
+    box-sizing: border-box;
+    width: 100%;
+    border-collapse: collapse;
+}
+td,th {
+    padding: 4px;
+    box-sizing: border-box;
+}
+.bg-black{
+    background-color: rgba(0, 0, 0, 0.53);
+}
+.fnt-50px{
+    font-size: 50px;
+}
+.input-display-3{
+    text-shadow: 5px 1px rgba(255, 255, 255, 0.737);
+    color:black;
+    font-style: inherit;
+    font-size: 50px;
+    text-align: center;
+    margin-top: 5px;
+}
+.input-display-1{
+    text-shadow: 5px 1px rgba(255, 255, 255, 0.737);
+    color: black;
+    font-style: inherit;
+    font-size: 100px;
+    text-align: center;
+}
+.input-display-2{
+    text-shadow: 5px 1px rgba(0, 0, 0, 0.715);
+    color: white;
+    font-style: inherit;
+    font-size: 30px;
+    text-align: center;
+    margin-top: -90px;
+}
+.input-display-4{
+    color: gold;
+    font-style: inherit;
+    font-size: 30px;
+    text-align: center;
+    margin-top: -90px;
+}
+.card-label{
+    font-size: 80%;
+    font-weight: 300;
+}
+.card-text{
+    font-weight: bold;
+}
